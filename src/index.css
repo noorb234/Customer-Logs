@@ -1,0 +1,407 @@
+:root {
+  --bg: #f2f2f7;
+  --card: #ffffff;
+  --text: #1c1c1e;
+  --muted: #6e6e73;
+  --line: #e5e5ea;
+  --blue: #007aff;
+  --red: #ff3b30;
+  --radius: 12px;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Page layout ---------- */
+
+.screen {
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  padding: calc(env(safe-area-inset-top) + 12px) 16px
+    calc(env(safe-area-inset-bottom) + 96px);
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  margin-bottom: 8px;
+}
+
+.top-bar-title {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.page-title {
+  font-size: 34px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.text-button {
+  background: none;
+  border: none;
+  padding: 10px 4px;
+  min-height: 44px;
+  color: var(--blue);
+  font-size: 17px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.text-button.bold {
+  font-weight: 600;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+  border-radius: 50%;
+}
+
+.icon-button:disabled {
+  color: var(--line);
+}
+
+/* ---------- Summary cards ---------- */
+
+.summary {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0 16px;
+}
+
+.summary-card {
+  flex: 1;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+
+.summary-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.summary-value {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* ---------- Search ---------- */
+
+.search {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--line);
+  font-size: 17px;
+  margin-bottom: 16px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.search::placeholder {
+  color: var(--muted);
+}
+
+/* ---------- Grouped list (rows inside one card) ---------- */
+
+.list {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.job-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 60px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.job-row:last-child {
+  border-bottom: none;
+}
+
+button.job-row {
+  width: 100%;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  text-align: left;
+}
+
+button.job-row:last-child {
+  border-bottom: none;
+}
+
+button.job-row:active {
+  background: var(--line);
+}
+
+.job-client {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.job-meta {
+  font-size: 15px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.job-cost {
+  font-size: 17px;
+  font-weight: 600;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chevron {
+  color: var(--muted);
+}
+
+.row-label {
+  color: var(--muted);
+}
+
+.row-value a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+/* ---------- Dates ---------- */
+
+.date {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.year {
+  font-size: 0.85em;
+  color: var(--muted);
+}
+
+/* ---------- Empty state ---------- */
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 48px 16px;
+}
+
+.empty strong {
+  display: block;
+  color: var(--text);
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+/* ---------- Bottom action button ---------- */
+
+.bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 12px 16px calc(env(safe-area-inset-bottom) + 12px);
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+
+.primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  max-width: 568px;
+  margin: 0 auto;
+  height: 52px;
+  border: none;
+  border-radius: 14px;
+  background: var(--blue);
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.primary-button:active {
+  opacity: 0.8;
+}
+
+/* ---------- Form ---------- */
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin: 0 0 6px 4px;
+}
+
+.input,
+.date-field {
+  width: 100%;
+  height: 50px;
+  padding: 0 14px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--card);
+  font-size: 17px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input:focus,
+.date-field:focus-within {
+  box-shadow: 0 0 0 2px var(--blue);
+}
+
+.input::placeholder {
+  color: var(--muted);
+}
+
+.date-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.date-field .calendar-icon {
+  margin-left: auto;
+  color: var(--muted);
+}
+
+.date-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border: none;
+}
+
+/* ---------- Detail ---------- */
+
+.detail-hero {
+  text-align: center;
+  margin: 8px 0 24px;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.detail-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.detail-cost {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 4px 0 0;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.contact-buttons a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px;
+  background: var(--card);
+  border-radius: var(--radius);
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.delete-button {
+  width: 100%;
+  height: 52px;
+  margin-top: 24px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--red);
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
