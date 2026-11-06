@@ -55,7 +55,6 @@ export default function JobForm({ job, onSave, onCancel }) {
                     id="client"
                     className="input"
                     type="text"
-                    placeholder="Acme Media"
                     autoCapitalize="words"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -68,7 +67,6 @@ export default function JobForm({ job, onSave, onCancel }) {
                     id="phone"
                     className="input"
                     type="tel"
-                    placeholder="(555) 123-4567"
                     value={phone}
                     onChange={(e) => setPhone(formatPhone(e.target.value))}
                 />
@@ -81,7 +79,6 @@ export default function JobForm({ job, onSave, onCancel }) {
                     className="input"
                     type="number"
                     inputMode="numeric"
-                    placeholder="2"
                     value={numCams}
                     onChange={(e) => setNumCams(e.target.value)}
                 />
@@ -94,7 +91,6 @@ export default function JobForm({ job, onSave, onCancel }) {
                     className="input"
                     type="text"
                     inputMode="decimal"
-                    placeholder="0.00"
                     value={cost}
                     onChange={(e) => setCost(e.target.value)}
                 />
